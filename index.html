@@ -5,14 +5,18 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>My Portfolio</title>
   <link rel="stylesheet" href="css/style.css">
-  <script src="/main.js" defer></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <script src="main.js" defer></script>
 </head>
 
 <body class="bodystyle">
 
   <nav class="nav-bar">
     <div class="logo"><img src="Images/Logo_Flower.png"></div>
-    <ul>
+    <a href="javascript:void(0);" class="icon" onclick="mobilemenu()">
+    <i class="fa fa-bars"></i>
+  </a>
+    <ul class="menu" id="menu">
       <li>Home</li>
       <li>About Us</li>
       <li>Service</li>
