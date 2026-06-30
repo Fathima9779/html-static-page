@@ -53,30 +53,30 @@ nav a {
   padding: 20px;
 }
 
-.nav-bar {
-  background-color: black;
-  color: white;
-  padding: 20px;
-  align-content: center;
-  align-items: center;
-  justify-content: center;
-  display: flex;
-  justify-content: space-between;
+.nav-bar{
+    background-color: black;
+    color: white;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
-.nav-bar ul li {
-  list-style: none;
-  display: inline;
-  gap: 6%;
+.nav-bar ul{
+    display: flex;
+    gap: 30px;
 }
 
-.nav-bar ul {
-  display: flex;
-  gap: 30px;
-
-
-
+.nav-bar ul li{
+    list-style: none;
 }
+
+.nav-bar ul li a{
+    color: white;
+    text-decoration: none;
+}
+
+
 
 .logo img {
   width: 50px;
@@ -169,6 +169,7 @@ footer {
   background-color: rgb(24, 5, 1);
   color: #888888;
 }
+
 .cryptorow1 {
   color: #888888;
   display: grid;
@@ -177,8 +178,9 @@ footer {
   gap: 2%;
   justify-content: center;
 }
-.containercrypto{
-  margin-bottom:0px;
+
+.containercrypto {
+  margin-bottom: 0px;
 }
 
 .cryptorow1 .cryptoclm1,
@@ -222,61 +224,59 @@ footer {
   padding: 5%;
   border-radius: 20px;
 }
-.cryptorow2 .cryptoitem{
+
+.cryptorow2 .cryptoitem {
   flex-direction: column;
   justify-content: center;
   align-items: center;
   text-align: center;
 }
-.marqueesection{
+
+.marqueesection {
   color: #888;
   font-size: 50px;
 }
-.howworkbtntext{
-color:#ffcc66;
-font-weight: 600;
-border: 1px solid #888888;
-padding: 10px 60px 10px 60px;
-border-radius: 10px;
-white-space: nowrap;
-justify-content: center;
-background-color: rgb(24, 5, 1);}
 
-.howworksection{
-justify-content: center;
-text-align: center;
+.howworkbtntext {
+  color: #ffcc66;
+  font-weight: 600;
+  border: 1px solid #888888;
+  padding: 10px 60px 10px 60px;
+  border-radius: 10px;
+  white-space: nowrap;
+  justify-content: center;
+  background-color: rgb(24, 5, 1);
 }
-.howworkdetails{
+
+.howworksection {
+  justify-content: center;
+  text-align: center;
+}
+
+.howworkdetails {
   color: #888;
   display: grid;
   grid-template-columns: 1fr 500px 1fr;
   grid-template-areas: "left-top center right-top" "left-bottom center right-bottom";
-  gap:80px;
-  padding:80px;
-  position:relative;
+  gap: 80px;
+  padding: 80px;
+  position: relative;
   text-align: center;
-  transform: translateY(50px);
-  animation: fadeUp 1s ease forwards;
+
+
 }
-.workimage{
-  grid-area:center;
-  text-align:center;}
-.worknum
-{
-font-size: 50px;
-opacity: 1;
+
+.workimage {
+  grid-area: center;
+  text-align: center;
 }
-@keyframes fadeUp{
-    from{
-        opacity: 0;
-        transform: translateY(50px);
-    }
-    to{
-        opacity: 1;
-        transform: translateY(0);
-    }
+
+.worknum {
+  font-size: 50px;
+  opacity: 1;
 }
-.Exchangedetails{
+
+.Exchangedetails {
   padding: 80px;
   border: 1px solid #888;
   display: flex;
@@ -287,18 +287,200 @@ opacity: 1;
   color: #888;
   gap: 2px;
 }
-.textimage img{
+
+.textimage img {
   border: 1px solid #888;
   width: 50px;
   height: 50px;
   padding: 1%;
-  border-radius: 10px;}
-  .exchangefirstimg{
-    width: 20%;
+  border-radius: 10px;
+
+
+}
+
+.exchangefirstimg {
+  width: 20%;
+}
+
+.exchangehead {
+  width: 50%;
+}
+
+.textimage {
+  width: 30%;
+}
+
+/* animation setting for 4 colom */
+.workdetailsleft {
+  opacity: 0;
+  transform: translateX(-100px);
+  transition: all 0.8s ease;
+}
+
+.workdetailsleft.show {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+
+.workdetailsright {
+  opacity: 0;
+  transform: translateX(100px);
+  transition: all 1s ease;
+}
+
+
+.workdetailsright.show {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* end */
+/* image animation */
+.workimage img {
+  animation: floating 3s ease-in-out infinite;
+}
+
+@keyframes floating {
+  0% {
+    transform: translateY(0px);
   }
-  .exchangehead{
-    width: 50%;
+
+  50% {
+    transform: translateY(-15px);
   }
-  .textimage{
-    width:30% ;
+
+  100% {
+    transform: translateY(0px);
   }
+}
+
+/* bottom div animation */
+.Exchangedetails {
+  opacity: 0;
+  transform: translateY(50px);
+  transition: all 1s ease;
+}
+
+.Exchangedetails.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* responsive started */
+
+/* navbar */
+
+.menu{
+    display:flex;
+    list-style:none;
+}
+
+.menu li{
+    margin-left:20px;
+}
+
+.icon{
+    display:none;
+    color:white;
+    font-size:30px;
+    cursor:pointer;
+}
+
+@media(max-width:768px){
+
+.icon{
+  display: block;
+}
+ .menu{
+        display:none;
+        flex-direction:column;
+        position:absolute;
+        top:70px;
+        left:0;
+        width:100%;
+        background:#222;
+    }
+
+    .menu.active{
+        display:flex;
+    }
+
+    .menu li{
+        margin:15px 0;
+        text-align:center;
+    }
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
