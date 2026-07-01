@@ -16,7 +16,7 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 
     elements.forEach((el) => observer.observe(el));
-});
+}); 
 
 
 // Bottom div fadeup animation
@@ -47,21 +47,29 @@ document.addEventListener("DOMContentLoaded", () => {
 
 // Mobilemenu Responsive
 
-function mobilemenu(){ 
-var x = document.getElementById("menu");
-if(x.style.display === "block"){
-  x.style.display = "none";
-}else{
-  x.style.display = "block";
+function mobilemenu() {
+    document.getElementById("menu").classList.toggle("active");
 }
-}
-window.addEventListener("resize", function () {
-    var x = document.getElementById("menu");
 
+window.addEventListener("resize", function () {
     if (window.innerWidth > 768) {
-        x.style.display = "";
+        document.getElementById("menu").classList.remove("active");
     }
 });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
