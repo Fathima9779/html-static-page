@@ -323,6 +323,8 @@ footer {
 
   .menu.active {
     display: flex;
+    z-index: 1000;
+    background: #0000001f;
   }
 
   .menu li {
